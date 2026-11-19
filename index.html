@@ -92,8 +92,8 @@ const trackingReady = fetch(TRACKING_API + "/api/create-invite", {
     landing_url: window.location.href,
     referrer: document.referrer || "",
     fbclid: params.get("fbclid") || "",
-    fbc: document.cookie.match(/(?:^|;\\s*)_fbc=([^;]*)/)?.[1] ? decodeURIComponent(document.cookie.match(/(?:^|;\\s*)_fbc=([^;]*)/)[1]) : "",
-    fbp: document.cookie.match(/(?:^|;\\s*)_fbp=([^;]*)/)?.[1] ? decodeURIComponent(document.cookie.match(/(?:^|;\\s*)_fbp=([^;]*)/)[1]) : ""
+    fbc: document.cookie.match(/(?:^|;\s*)_fbc=([^;]*)/)?.[1] ? decodeURIComponent(document.cookie.match(/(?:^|;\s*)_fbc=([^;]*)/)[1]) : "",
+    fbp: document.cookie.match(/(?:^|;\s*)_fbp=([^;]*)/)?.[1] ? decodeURIComponent(document.cookie.match(/(?:^|;\s*)_fbp=([^;]*)/)[1]) : ""
   })
 }).then(async response => {
   const data = await response.json().catch(() => ({}));
